@@ -1,0 +1,35 @@
+  <nav class="navbar navbar-dark bg-dark " style="background-color:black; color:white">
+    <a class="navbar-brand ">
+      <b>Welcome {{ title }}</b>
+      </a>
+      <ul class="nav nav-pills flex-column">
+          <li class="nav-item">
+            <a class="nav-link active" style="color:white" href="#">ANGULAR PROJECT</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " routerLink='/news/news' href="#" title ="View today's News" alt="View today's News">NEWS</a>
+  </li>
+          <li class="nav-item">
+                    <a class="nav-link " routerLink='/media/music' href="#" title ="Play Audio,Video,YouTube" alt="Audio,Video,YouTube">MEDIA</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link disabled" href="#" title ="Upload/download (image ,pdf,word and excel)" alt="Upload/download (image ,pdf,word and excel)">DOCUMENTS</a>
+            </li>
+          <li class="nav-item">
+              <a class="nav-link disabled" href="#" title="PayU,PayTm,Paypal" alt="">PAYMENT GATEWAY</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#" title="" alt="">NOTIFICATION/EMAIL</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link disabled" href="#" title="" alt="">WIDGETS</a>
+                </li>
+            <li class="nav-item" style="float:right;">
+                <a class="nav-link"  (click)="onSignUp()">SignUp</a>
+              </li>
+              <li class="nav-item" style="float:right;">
+                <a class="nav-link "  (click)="onLogIn()">SignIn</a>
+              </li>
+        </ul>
+
+  </nav>

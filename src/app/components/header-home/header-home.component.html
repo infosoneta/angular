@@ -1,0 +1,28 @@
+<nav class="navbar navbar-dark bg-dark " style="background-color:brown ">
+        <a class="navbar-brand text-white;">
+          <b>Welcome Guest !</b>
+          </a>
+          <ul class="nav nav-pills flex-column" style="color:white">
+              <li class="nav-item">
+                  <a routerLink='/admin/login' class="nav-link active" style="color:white" href="#">ANGULAR PROJECT</a>
+                </li>
+              <li class="nav-item">
+                  <a routerLink='/media/manage-media' >Manage Media</a>
+              </li>
+              <li class="nav-item">
+                <a routerLink='/employees/employee' routerLinkActive='active'>Emplyee</a>
+            </li>
+              <li class="nav-item">
+                <!-- <a class="nav-link disabled" href="#">Product</a> -->
+                <a routerLink='/employees/employee-list' >Emplyee List</a>
+               
+              </li>
+              <li class="nav-item" style="float:right;padding-right:5px; ">
+                <a class="nav-link"  (click)="onSignUp()">SignUp</a>
+              </li>
+              <li class="nav-item" style="float:right;">
+                <a class="nav-link "  (click)="onLogout()">Logout</a>
+              </li>
+            </ul>
+         
+      </nav>

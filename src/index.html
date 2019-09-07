@@ -7,8 +7,77 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-</head>
+   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <!-- <script src="https://www.gstatic.com/firebasejs/6.0.1/firebase.js"></script>
+  <link rel="stylesheet" href="firebaseui.css">
+  
+  -->
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
+  <script>
+    async function news(){
+     toastr.options.timeOut = 1500; // 1.5s
+       toastr.info('callig news!');
+    //alert('calling news');
+    var url = 'https://newsapi.org/v2/top-headlines?' +
+              'country=in&' +
+              'apiKey=3bb1fd8a4d3c4531a5282a8486647d41';
+    var req = new Request(url);
+    const resp = await fetch(req);
+    const data = await resp.json();
+    var s="<table>";
+    //var s=" ";
+    
+    var newarray = data.articles.map(myFunction)
+    newarray=newarray+"</table>";
+    function myFunction(val) {
+      return s="<table cellspaceing=0 cellpadding=0 border=0 width='50%' ><tr><td width='30%'>"+val.title +"</td><td width='5%'><img src="+"'"+val.urlToImage +"'"+" width=20 height=20 /></td></tr></table>";
+    }
+    
+    //alert(s);
+    document.getElementById("result").innerHTML = newarray;
+    
+    }
+    </script>
+  </head>
 <body>
   <app-root></app-root>
+  <script>
+      $(document).ready(function(){
+        $("#myInput").on("keyup", function() {
+          var value = $(this).val().toLowerCase();
+          $("#myTable tr").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+          });
+        });
+
+        toastr.options.timeOut = 1500; // 1.5s
+        toastr.info('Page Loaded!');
+
+        $("#btn").click(function()
+        {
+          //alert('hello');
+         // toastr.info('successfully1 !');
+          tostr.succees("successfully added and saved !")
+        })
+
+        // $("#btntest").on("click",function()
+        // {
+        //  // alert('hello');
+        //   toastr.info('successfully!');
+        //   tostr.succees("successfully added and saved !")
+        // })
+        
+      });
+
+
+      </script>
+      
 </body>
 </html>

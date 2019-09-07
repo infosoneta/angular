@@ -1,0 +1,46 @@
+<div>
+    <div class="table-responsive bs-example widget-shadow">
+        <input class="form-control" id="myInput" type="text" placeholder="Search..">
+        <br>
+        <table class="table table-bordered table-striped" >
+          <thead>
+            <tr>
+              <th></th>
+              <th>Name</th>
+              <th>Postion</th>
+              <th>Salary</th>
+              <th colspan="2">Action</th>
+            </tr>
+          </thead>
+          <tbody id="myTable"  *ngFor="let employee of employeelist">
+            <tr>
+              <!-- <td><img src="assets/image/emp1.png" /></td> -->
+              <td><img [src]="employee.imageUrl"  width=30px height="30px"/></td>
+              <td (click)="onItemClick(employee)" >  {{ employee.name }}</td>
+              <td (click)="onItemClick(employee)" > {{ employee.position }}</td> 
+              <td (click)="onItemClick(employee)" > {{ employee.salary }}</td>
+              <td  style="width:5%">
+                <button type="button" class="btn btn-default" Tooltip="Click Edit Button" (click)="onItemClick(employee)">
+                    <i class="fa fa-edit"></i> Edit</button>
+              </td>
+              <!-- <td  style="width:5%">
+                <button type="button" class="btn btn-danger" Tooltip="Click Delete Button" (click)="onItemClick(employee.EmployeeId)">Delete</button>
+              </td> -->
+            </tr>
+          </tbody>
+        </table>
+        <!--  <div>
+          | paginate: { id: 'listing_pagination',
+                                                      itemsPerPage: 10,
+                                                      currentPage: page,
+                                                      totalItems: totalRec } 
+            <pagination-controls  id="listing_pagination" maxSize="5" directionLinks="true" (pageChange)="page = $event"></pagination-controls>
+          </div>-->
+      </div>
+<!-- <ul class="list-group hover">
+
+    <li class="list-group-item" *ngFor="let employee of employeelist" (click)="onItemClick(employee)">
+      {{employee.name}} - {{employee.position}}
+    </li>
+  </ul> -->
+  </div>

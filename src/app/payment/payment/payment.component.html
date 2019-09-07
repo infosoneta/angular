@@ -1,0 +1,47 @@
+<app-header-home></app-header-home>
+<div class="container">
+
+<div class="col-md-4">
+        <h2>PayU Payment Form</h2>
+        <form ngNoForm action="https://test.payu.in/_payment" name="payuform" method="POST" >
+        <!-- target="payment_popup"  onsubmit="window.open('about:blank','payment_popup','width=900,height=500');">
+          --><div class="form-group"> 
+            <label for="productInfo">Product Name:</label>
+            <input type="text" class="form-control" id="productInfo" name="productinfo" [(ngModel)]="payuform.productinfo">
+          </div>
+          <div class="form-group">
+            <label for="firstname">Name:</label>
+            <input type="text" class="form-control" id="firstname" name="firstname" [(ngModel)]="payuform.firstname">
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" name="email" [(ngModel)]="payuform.email">
+          </div>
+          <div class="form-group">
+            <label for="email">Phone:</label>
+            <input type="number" class="form-control" id="phone" name="phone" [(ngModel)]="payuform.phone">
+          </div>
+          <div class="form-group">
+            <label for="amount">Amount:</label>
+            <input type="number" class="form-control" id="amount" name="amount" [(ngModel)]="payuform.amount">
+          </div>
+           <label for="key">key:</label>
+          <input name="key" id="key" ng-model="key" rows="2" cols="2"  [(ngModel)]="payuform.key">
+          
+          <label for="surl">Surl:</label>
+          <input name="surl" id="surl" ng-model="surl" rows="2" cols="2"  [(ngModel)]="payuform.surl">
+          <label for="hash">hash:</label>
+          <input name="hash" id="hash" ng-model="hash" rows="2" cols="2"  [(ngModel)]="payuform.hash">
+         
+
+          <label for="furl">furl:</label>
+          <input name="furl" id="furl" ng-model="furl" rows="2" cols="2"  [(ngModel)]="payuform.furl">
+          <label for="txnid">txnid:</label>
+          <input name="txnid" id="txnid" ng-model="txnid" rows="2" cols="2"  [(ngModel)]="payuform.txnid">
+          <label for="service_provider">service_provider:</label>
+          <input name="service_provider" id="service_provider" rows="2" cols="2" >
+           <!-- <button *ngIf="disablePaymentButton" type="button"  class="btn btn-default" (click)="confirmPayment()">Confirm</button>-->
+          <button *ngIf="disablePaymentButton" type="submit" class="btn btn-danger">Submit</button>  
+        </form>
+      </div>
+    </div>

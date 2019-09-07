@@ -1,0 +1,57 @@
+<div class="container">
+                 
+                
+<div  class="phone-number-verify">
+
+    <div  *ngIf="!windowRef.confirmationResult" style="height:50px">
+        <form >
+            <div>
+                <div><label ><b>Enter valid phone Number.</b></label>
+                    <span >+91 &nbsp;</span>
+                    <input placeholder="Phone number" type="number" required name="phone_number" [(ngModel)]="phoneNumber.phone_number">
+                   
+                </div>
+            </div>
+        </form>
+    </div>
+    <div style="margin-left:25%;height:100px;">
+        <div id="recaptcha-container"></div>
+    </div>
+    <div class="row">
+     <div class="col-sm-4" *ngIf="!windowRef.confirmationResult" style="margin-left:30%;padding-bottom:20px">
+        <button type="button" class="btn btn-primary form-control"  (click)="CancelPhoneAuth()"> 
+          <span>Cancel</span>
+        </button>
+    </div> 
+    <div clsss="col-sm-4" *ngIf="!windowRef.confirmationResult">
+            <button class="form-control" [disabled]="!phoneNumber.phone_number" type="button" class="btn btn-primary"  (click)="sendLoginCode()">
+                <span>Send SMS Code</span>
+            </button>
+        </div>
+    </div>
+    <div style="padding-top: 15px;" *ngIf="windowRef.confirmationResult">
+            <label>Enter verification code.</label>
+            <div class="row" >
+                
+            <div class="col-sm-4" style="margin-left:30%;padding-bottom:20px">
+                    <div>
+                        <input class="form-control" placeholder="Verification Code" type="text" required name="code" [(ngModel)]="verificationCode">
+                    </div>
+         </div></div>
+        <div class="row" >
+                <div class="col-sm-4" style="margin-left:30%">
+                        <button type="button" class="form-control"  (click)="CancelPhoneAuth()"> 
+                          <span>Cancel</span>
+                        </button>
+                    </div> 
+            <div class="col-sm-4" style="float:right">
+                <button class="form-control btn btn-primary " [disabled]="!verificationCode" type="button" color="accent"  (click)="verifyLoginCode()">
+                    <span>Verify</span>
+                </button>
+            </div>
+           
+        </div>
+  
+    </div>
+</div>
+</div>

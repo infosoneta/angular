@@ -1,0 +1,77 @@
+<div class="container">
+
+    <app-header-home></app-header-home>
+    <div class="container">
+    <div class="row">
+    <div class="col-sm-2">
+    <div class="login-form">
+          <span><h2>Manage Media  </h2></span>
+    
+          
+    <form #mediaForm="ngForm" (ngSubmit)="onSubmit(mediaForm)">
+    <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="mediaService.media.$key">
+    <div class="form-group">
+    <label>Title</label>
+    <input class="form-control" name="title" #title="ngModel" [(ngModel)]="mediaService.media.title" placeholder="Title" required>
+   </div>
+   <div class="form-group">
+      <label>Artist</label>
+      <input class="form-control" name="artist" #artist="ngModel" [(ngModel)]="mediaService.media.artist" placeholder="Artist" required>
+     </div>
+   <div class="form-group">
+    <label>Description</label>
+    <input class="form-control" name="description" #description="ngModel" [(ngModel)]="mediaService.media.description" placeholder="Description" >
+   </div>
+   <div class="form-group">
+      <label>Lyrics</label>
+      <input class="form-control" name="lyrics" #lyrics="ngModel" [(ngModel)]="mediaService.media.lyrics" placeholder="Lyrics" >
+     </div>
+   <div class="form-group">
+        <label>Media</label>
+      <div class="input-group">
+        <div class="input-group-addon">
+          <i class="fa fa-image"></i>
+        </div>
+        <img [src]="imgSrc" width="350px" height="250px" >
+      
+           
+         </div>
+    </div> 
+  
+    <div class="form-group">
+      <label>Select file to upload</label>
+        <input type="file" accept="audio/*" class="form-control" name="mediaUrl" #mediaUrl="ngModel" [(ngModel)]="mediaService.media.mediaUrl"
+        (change)="showPreview($event)"  >  
+       <div class="text-danger" *ngIf="isSubmitted && formControls.mediaUrl.errors?.required">This field is required.
+      </div>
+    </div>
+  
+
+
+   <div class="form-group">
+    <button id="submit" type="submit" 
+    classs="btn btn-primary">Submit</button>
+   </div>
+</form>
+</div></div>
+
+<div class="col-md-5">
+    <p></p>
+  </div> 
+  <div class="col-sm-2">
+     <div class="login-form1">
+         <span><h2>Media List</h2></span>
+        
+         <form>
+            <app-media-list></app-media-list>
+        </form>
+     </div>
+  </div>
+
+</div>
+</div>
+
+
+
+</div>
+ 

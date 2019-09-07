@@ -1,0 +1,57 @@
+<app-header *ngIf="true"></app-header>
+
+<div class="container">
+<div class="displayTable">
+    <div class="displayTableCell">
+  
+      <div class="login-form">
+        <h3>Sign Up</h3>
+        <form #regForm="ngForm" (ngSubmit)="onSubmit(regForm)">
+        <!-- <div class="form-group">
+            <label class="col-md-4 control-label"> Name</label>  
+            <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input  name="display_name" placeholder="Display Name" class="form-control"  type="text" #userdisplayName required>
+              </div>
+            </div>
+          </div> -->
+          
+        <div class="row form-group">
+            <label class="col-md-4 control-label">Email Address</label>  
+            <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input  name="email" placeholder="Email Address" class="form-control"  type="email" #userEmail required>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Text input-->
+         
+          <div class="row form-group">
+            <label class="col-md-4 control-label" >Password</label> 
+              <div class="col-md-4 inputGroupContainer">
+              <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input name="userpassword" placeholder="Password" class="form-control"  type="password" #userPwd required>
+              </div>
+            </div>
+          </div>
+
+      
+        <div class="formGroup">
+            <button type="button" class="btn btn-warning"  (click)="authService.SignUp(userEmail.value, userPwd.value)">
+          <span class="glyphicon glyphicon-send">Submit</span></button>
+        </div>
+  
+      </form>
+      </div>
+  
+      <div class="redirectToLogin">
+        <span>Already have an account? <span class="redirect" routerLink="/admin/login">Log In</span></span>
+      </div>
+    </div>
+  
+  </div>
+</div>
